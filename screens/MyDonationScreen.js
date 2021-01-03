@@ -30,7 +30,8 @@ export default class MyDonationScreen extends Component {
    }
 
    getAllDonations =()=>{
-     this.requestRef = db.collection("all_donations").where("donor_id" ,'==', this.state.donorId)
+     this.requestRef = db.collection("all_donations")
+     .where("donor_id" ,'==', this.state.donorId)
      .onSnapshot((snapshot)=>{
        var allDonations = []
        snapshot.docs.map((doc) =>{
